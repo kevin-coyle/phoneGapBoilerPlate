@@ -1,0 +1,16 @@
+2014-02-08 18:13:05.120 HelloWorld[4665:80b] Multi-tasking -> Device: YES, App: YES
+2014-02-08 18:13:05.129 HelloWorld[4665:80b] Unlimited access to network resources
+2014-02-08 18:13:05.133 HelloWorld[4665:80b] Fix applied for database locations?: YES
+2014-02-08 18:13:05.446 HelloWorld[4665:80b] Resetting plugins due to page load.
+2014-02-08 18:13:05.483 HelloWorld[4665:80b] Finished load of: file:///Users/kevincoyle/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/3644E883-97FA-41D3-B8D9-9CB18A14F25F/HelloWorld.app/www/index.html
+2014-02-08 18:14:42.209 HelloWorld[5275:80b] Multi-tasking -> Device: YES, App: YES
+2014-02-08 18:14:42.240 HelloWorld[5275:80b] Unlimited access to network resources
+2014-02-08 18:14:42.561 HelloWorld[5275:80b] Resetting plugins due to page load.
+2014-02-08 18:14:42.602 HelloWorld[5275:80b] Finished load of: file:///Users/kevincoyle/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/3644E883-97FA-41D3-B8D9-9CB18A14F25F/HelloWorld.app/www/index.html
+2014-02-08 18:14:45.463 HelloWorld[5275:80b] *** Assertion failure in -[UIApplication runModal:](), /SourceCache/UIKit_Sim/UIKit-2903.23/UIApplication.m:9465
+2014-02-08 18:14:45.467 HelloWorld[5275:80b] *** WebKit discarded an uncaught exception in the webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame: delegate: <NSInternalInconsistencyException> The view passed in does not have a window.
+2014-02-08 21:40:48.348 NetTuts[1483:80b] Multi-tasking -> Device: YES, App: YES
+2014-02-08 21:40:48.387 NetTuts[1483:80b] Unlimited access to network resources
+2014-02-08 21:40:48.392 NetTuts[1483:80b] Fix applied for database locations?: YES
+2014-02-08 21:40:48.969 NetTuts[1483:80b] Resetting plugins due to page load.
+2014-02-08 21:40:49.173 NetTuts[1483:80b] Finished load of: file:///Users/kevincoyle/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/D2FDF7C5-3432-411D-926F-5CA106B09BC1/NetTuts.app/www/index.html

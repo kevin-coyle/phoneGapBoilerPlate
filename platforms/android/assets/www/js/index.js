@@ -16,10 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        this.testzone = {};
+        this.lat = 0;
+        this.long = 0;
     },
     // Bind Event Listeners
     //
@@ -27,23 +30,47 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.testzone = document.getElementById("testzone");
+        app.btnWhereAmI = document.getElementById('whereami');
+        app.btnWhereAmI.addEventListener("click", app.getPlace, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.testzone = document.getElementById("testzone");
+        navigator.geolocation.getCurrentPosition(app.onGeoSuccess, app.onGeoError);
+        navigator.camera.getPicture(app.onCamSuccess, app.onCamFail, { quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL
+        });
+
+    },
+    onCamSuccess: function(imageData) {
+        console.log(imageData);
+    },
+    onCamFail: function(message) {
+        console.log(message);
+    },
+    onGeoSuccess: function (position) {
+        alert('GeoSuccess');
+        app.testzone.innerHTML = "Lattitude: " + position.coords.latitude + '<br />' +
+        'Longitude: ' + position.coords.longitude + '<br />';
+        app.lat = position.coords.latitude;
+        app.long = position.coords.longitude;
+    },
+    onGeoError: function(error) {
+        alert('There is an error: ' + error.message);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    },
+    getPlace: function() {
+        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng='+app.lat+','+app.long+'&sensor=true', function(data) {
+            var addy = data.results[0].formatted_address;
+            app.testzone.innerHTML = addy;
+        });
     }
+
 };
